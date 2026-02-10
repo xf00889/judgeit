@@ -1,0 +1,321 @@
+/* Print Stylesheet for Beauty Pageant Judging System */
+
+/* Base styles for screen and print */
+.print-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Header with logo layout */
+.header-with-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.school-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.vertical-separator {
+    width: 3px;
+    height: 80px;
+    background-color: #333;
+}
+
+.header-text {
+    text-align: left;
+}
+
+.print-header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.print-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.print-header .location {
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+}
+
+.print-header .page-title {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+table th {
+    background-color: #f3f4f6;
+    font-weight: 600;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+/* Typography styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+}
+
+/* Gender section styles */
+.gender-section {
+    margin-bottom: 2rem;
+}
+
+.gender-section h3 {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e5e7eb;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+table th {
+    background-color: #f3f4f6;
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+/* Highlight top 3 ranks */
+.rank-row.rank-1 {
+    background: linear-gradient(to right, #FFD700, #FFF8DC) !important;
+    font-weight: 700;
+}
+
+.rank-row.rank-2 {
+    background: linear-gradient(to right, #C0C0C0, #F5F5F5) !important;
+    font-weight: 700;
+}
+
+.rank-row.rank-3 {
+    background: linear-gradient(to right, #CD7F32, #FFE4B5) !important;
+    font-weight: 700;
+}
+
+.rank-cell {
+    font-size: 1.5rem;
+    font-weight: 900 !important;
+    text-align: center;
+    width: 80px;
+}
+
+/* Print-specific styles */
+@media print {
+    /* Page setup */
+    @page {
+        size: letter;
+        margin: 0.5in;
+    }
+
+    /* Hide interactive elements */
+    button,
+    .no-print,
+    nav,
+    .navigation,
+    a[href^="javascript:"],
+    input[type="button"],
+    input[type="submit"] {
+        display: none !important;
+    }
+
+    /* Typography for print */
+    body {
+        font-size: 11pt;
+        line-height: 1.4;
+        color: #000;
+        background: white;
+    }
+
+    h1 {
+        font-size: 16pt;
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 14pt;
+        line-height: 1.2;
+    }
+
+    h3 {
+        font-size: 13pt;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Header with logo for print */
+    .header-with-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .school-logo {
+        width: 50px;
+        height: 50px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .vertical-separator {
+        width: 2px;
+        height: 50px;
+        background-color: #000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .print-header {
+        margin-bottom: 0.5in;
+    }
+
+    .page-title {
+        margin-top: 0.5rem;
+    }
+
+    /* Compact gender sections */
+    .gender-section {
+        page-break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+
+    .gender-section h3 {
+        margin-bottom: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+
+    /* Table optimization for print */
+    table {
+        page-break-inside: auto;
+        border: 1px solid #000;
+        margin-bottom: 1rem;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+
+    table th {
+        background: #f0f0f0 !important;
+        font-weight: bold;
+        border: 1px solid #000 !important;
+        padding: 0.4rem;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    table td {
+        border: 1px solid #000 !important;
+        padding: 0.4rem;
+    }
+
+    /* Highlight top 3 ranks with colors preserved */
+    .rank-row.rank-1 {
+        background: #FFD700 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        font-weight: 700 !important;
+    }
+
+    .rank-row.rank-2 {
+        background: #C0C0C0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        font-weight: 700 !important;
+    }
+
+    .rank-row.rank-3 {
+        background: #CD7F32 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        font-weight: 700 !important;
+        color: #fff !important;
+    }
+
+    .rank-row.rank-3 td {
+        color: #fff !important;
+    }
+
+    .rank-cell {
+        font-size: 14pt;
+        font-weight: 900 !important;
+        text-align: center;
+    }
+
+    /* Ensure text is readable */
+    p,
+    span,
+    div {
+        color: #000 !important;
+    }
+}
