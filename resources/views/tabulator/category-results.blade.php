@@ -144,16 +144,21 @@
                                         $scores = $breakdown ? $breakdown['scores'] : collect();
                                     @endphp
                                     
-                                    <div class="text-lg font-bold text-gray-900">
+                                    <div class="text-xl font-bold text-indigo-600 mb-2">
                                         {{ number_format($average, 2) }}
                                     </div>
                                     
                                     @if($scores->isNotEmpty())
-                                        <div class="text-xs text-gray-500 mt-1">
+                                        <div class="space-y-1 mt-2 pt-2 border-t border-gray-200">
                                             @foreach($scores as $score)
-                                                <div>{{ $score->judge->name }}: {{ number_format($score->score_value, 2) }}</div>
+                                                <div class="flex items-center justify-between text-sm bg-gray-50 px-2 py-1 rounded">
+                                                    <span class="text-gray-700 font-medium">{{ $score->judge->name }}:</span>
+                                                    <span class="text-gray-900 font-semibold">{{ number_format($score->score_value, 2) }}</span>
+                                                </div>
                                             @endforeach
                                         </div>
+                                    @else
+                                        <div class="text-xs text-gray-400 italic mt-2">No scores</div>
                                     @endif
                                 </td>
                             @endforeach

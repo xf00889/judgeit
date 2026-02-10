@@ -139,14 +139,19 @@
                             $average = $breakdown ? $breakdown['average'] : 0;
                             $scores = $breakdown ? $breakdown['scores'] : collect();
                         @endphp
-                        <td style="text-align: center;">
-                            <div class="criterion-average">{{ number_format($average, 2) }}</div>
+                        <td style="text-align: center; padding: 8px;">
+                            <div class="criterion-average" style="color: #4f46e5; margin-bottom: 4px;">{{ number_format($average, 2) }}</div>
                             @if($scores->isNotEmpty())
-                                <div class="judge-scores">
+                                <div class="judge-scores" style="border-top: 1px solid #e5e7eb; padding-top: 4px;">
                                     @foreach($scores as $score)
-                                        <div>{{ $score->judge->name }}: {{ number_format($score->score_value, 2) }}</div>
+                                        <div style="display: flex; justify-content: space-between; padding: 2px 4px; background-color: #f9fafb; margin-bottom: 2px; border-radius: 2px;">
+                                            <span style="font-weight: 500;">{{ $score->judge->name }}:</span>
+                                            <span style="font-weight: 600;">{{ number_format($score->score_value, 2) }}</span>
+                                        </div>
                                     @endforeach
                                 </div>
+                            @else
+                                <div style="font-size: 0.65rem; color: #9ca3af; font-style: italic;">No scores</div>
                             @endif
                         </td>
                     @endforeach
